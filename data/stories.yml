@@ -1,0 +1,79 @@
+version: "2.0"
+
+stories:
+
+- story: happy path + movie
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_movie
+  - intent: affirm
+  - action: utter_plot
+  - intent: movie_plot
+  - action: action_movie_search
+
+- story: happy path + no movie
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_movie
+  - intent: deny
+  - action: utter_goodbye
+
+- story: sad path 1 + movie
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_movie
+  - intent: affirm
+  - action: utter_plot
+  - intent: movie_plot
+  - action: action_movie_search
+
+- story: sad path 1 + no movie
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_movie
+  - intent: deny
+  - action: utter_goodbye
+
+- story: sad path 2 + movie
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_movie
+  - intent: affirm
+  - action: utter_plot
+  - intent: movie_plot
+  - action: action_movie_search
+
+- story: sad path 2 + no movie
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_movie
+  - intent: deny
+  - action: utter_goodbye
