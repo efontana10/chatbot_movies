@@ -1,1 +1,1 @@
-# chatbot_movies
+# Rasa Chatbot to perform movie search
