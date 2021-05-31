@@ -16,9 +16,9 @@ from gensim.models.doc2vec import Doc2Vec
 from gensim.parsing.preprocessing import preprocess_string
 
 # Load ML model
-model = Doc2Vec.load(R'C:\Users\e.fontana\Desktop\movies\movies_doc2vec')
+model = Doc2Vec.load(R'\movies_doc2vec') # INSERT FULL PATH
 # Load dataset to get movie titles
-df = pd.read_csv(R'C:\Users\e.fontana\Desktop\movies\wiki_movie_plots_deduped.csv', sep=',', usecols = ['Release Year', 'Title', 'Plot'])
+df = pd.read_csv(R'\wiki_movie_plots_deduped.csv', sep=',', usecols = ['Release Year', 'Title', 'Plot'])) # INSERT FULL PATH
 df = df[df['Release Year'] >= 2000]
 
 class ActionMovieSearch(Action):
